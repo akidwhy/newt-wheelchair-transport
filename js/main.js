@@ -77,6 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---- Populate DOB Year dropdown ---- */
+  const dobYear = document.getElementById('dob-year-select');
+  if (dobYear) {
+    const currentYear = new Date().getFullYear();
+    for (let y = currentYear; y >= 1900; y--) {
+      const opt = document.createElement('option');
+      opt.value = y;
+      opt.textContent = y;
+      dobYear.appendChild(opt);
+    }
+  }
+
   /* ---- Contact Form ---- */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
