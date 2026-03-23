@@ -128,7 +128,7 @@
 
             <form id="contact-form" name="contact" method="POST" data-netlify="true" action="/contact.html?sent=1" novalidate>
               <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="subject" data-remove-prefix value="New Trip Request — %{formName} (%{submissionId})" />
+              <input type="hidden" name="subject" data-remove-prefix value="Ride Request: %{pax-first} %{pax-last} on %{trip-date}" />
 
               <!-- DATE & TIME -->
               <div class="form-section">
