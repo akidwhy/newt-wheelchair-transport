@@ -89,15 +89,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ---- Netlify Form: build subject line from actual field values ---- */
+  /* ---- Netlify Form: combine pickers into single fields before submit ---- */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', () => {
-      const first   = (document.getElementById('pax-first')?.value   || '').trim();
-      const last    = (document.getElementById('pax-last')?.value    || '').trim();
-      const date    = (document.getElementById('trip-date')?.value   || '').trim();
+
+      const val = id => (document.getElementById(id)?.value || '').trim();
+      const time = (h, m, ap) => { const v = val(h); return v ? `${v}:${val(m)} ${val(ap)}` : ''; };
+
+      // Combine time pickers
+      const apptTime   = document.getElementById('combined-appt-time');
+      const pickupTime = document.getElementById('combined-pickup-time');
+      const returnTime = document.getElementById('combined-return-time');
+      if (apptTime)   apptTime.value   = time('appt-hour',   'appt-min',   'appt-ampm');
+      if (pickupTime) pickupTime.value = time('pickup-hour', 'pickup-min', 'pickup-ampm');
+      if (returnTime) returnTime.value = time('return-hour', 'return-min', 'return-ampm');
+
+      // Combine DOB
+      const dob = document.getElementById('combined-dob');
+      if (dob) {
+        const m = val('dob-month'), d = val('dob-day'), y = val('dob-year-select');
+        dob.value = (m && d && y) ? `${m}/${d}/${y}` : '';
+      }
+
+      // Build subject line
       const subject = document.getElementById('form-subject');
       if (subject) {
+        const first   = val('pax-first');
+        const last    = val('pax-last');
+        const date    = val('trip-date');
         const name    = [first, last].filter(Boolean).join(' ') || 'Unknown Passenger';
         const dateStr = date ? new Date(date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Date TBD';
         subject.value = `Ride Request: ${name} on ${dateStr}`;
