@@ -89,6 +89,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ---- Netlify Form: build subject line from actual field values ---- */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', () => {
+      const first   = (document.getElementById('pax-first')?.value   || '').trim();
+      const last    = (document.getElementById('pax-last')?.value    || '').trim();
+      const date    = (document.getElementById('trip-date')?.value   || '').trim();
+      const subject = document.getElementById('form-subject');
+      if (subject) {
+        const name    = [first, last].filter(Boolean).join(' ') || 'Unknown Passenger';
+        const dateStr = date ? new Date(date + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Date TBD';
+        subject.value = `Ride Request: ${name} on ${dateStr}`;
+      }
+    });
+  }
+
   /* ---- Netlify Form: show success banner after redirect ---- */
   const successBanner = document.getElementById('form-success');
   if (successBanner && new URLSearchParams(window.location.search).get('sent') === '1') {
