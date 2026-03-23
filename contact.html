@@ -126,7 +126,8 @@
             <h3>Book a Ride</h3>
             <p>Fill out the form below and we'll get back to you as soon as possible. For immediate assistance, call us at <a href="tel:6305426398" style="color:var(--primary);font-weight:600;">(630) 542-6398</a>.</p>
 
-            <form id="contact-form" novalidate>
+            <form id="contact-form" name="contact" netlify action="/contact.html?sent=1" novalidate>
+              <input type="hidden" name="form-name" value="contact" />
 
               <!-- DATE & TIME -->
               <div class="form-section">
@@ -410,10 +411,11 @@
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg form-submit" style="margin-top:1.5rem;">Send Message →</button>
-              <div id="form-success" class="success-message">
-                ✅ Thank you! We've received your message and will be in touch shortly. For urgent needs, please call us at (630) 542-6398.
-              </div>
             </form>
+
+            <div id="form-success" class="success-message">
+              ✅ Thank you! We've received your message and will be in touch shortly. For urgent needs, please call us at (630) 542-6398.
+            </div>
           </div>
         </div>
 

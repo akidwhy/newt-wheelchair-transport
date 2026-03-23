@@ -89,25 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ---- Contact Form ---- */
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('.form-submit');
-      const success = document.getElementById('form-success');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-
-      // Simulate submission (replace with real backend/Formspree/etc.)
-      setTimeout(() => {
-        contactForm.reset();
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
-        if (success) success.classList.add('show');
-        setTimeout(() => success && success.classList.remove('show'), 5000);
-      }, 1400);
-    });
+  /* ---- Netlify Form: show success banner after redirect ---- */
+  const successBanner = document.getElementById('form-success');
+  if (successBanner && new URLSearchParams(window.location.search).get('sent') === '1') {
+    successBanner.classList.add('show');
+    successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Clean the URL without reloading
+    history.replaceState(null, '', window.location.pathname);
   }
 
   /* ---- Smooth counter animation (stats) ---- */
