@@ -2,9 +2,24 @@
 /**
  * Template Name: About Us
  * Assigned to the page with slug: about
+ *
+ * The "Our Story" body text is pulled from the page's WordPress editor content,
+ * so it can be edited freely from WP Admin → Pages → About Us.
  */
 get_header();
-$img = get_template_directory_uri() . '/images/';
+$img       = get_template_directory_uri() . '/images/';
+$phone     = newt_phone();
+$phone_raw = newt_phone( true );
+
+// Grab the page content for the story paragraphs
+$story_content = '';
+if ( have_posts() ) {
+    the_post();
+    $story_content = get_the_content();
+}
+
+// Default story text shown when the editor is blank
+$default_story = '<p>N.E.W.T. was founded with one core mission: to give wheelchair-bound individuals the freedom to live their lives fully. Whether it\'s a doctor\'s appointment, a family gathering, or a night out, we believe your mobility challenges should never limit your world.</p><p>As a family-owned and operated business, we bring a personal touch to every single trip. You won\'t reach a call center — you\'ll speak with someone who genuinely cares about you and your loved ones.</p>';
 ?>
 
 <section class="page-hero">
@@ -27,9 +42,10 @@ $img = get_template_directory_uri() . '/images/';
       <div class="fade-up">
         <span class="section-label">Who We Are</span>
         <h2>More Than Just a Ride</h2>
-        <p style="margin-top:0.75rem;margin-bottom:1rem;">N.E.W.T. was founded with one core mission: to give wheelchair-bound individuals the freedom to live their lives fully. Whether it's a doctor's appointment, a family gathering, or a night out, we believe your mobility challenges should never limit your world.</p>
-        <p>As a family-owned and operated business, we bring a personal touch to every single trip. You won't reach a call center — you'll speak with someone who genuinely cares about you and your loved ones.</p>
-        <div class="value-list">
+        <div style="margin-top:0.75rem;">
+          <?php echo $story_content ? wp_kses_post( $story_content ) : wp_kses_post( $default_story ); ?>
+        </div>
+        <div class="value-list" style="margin-top:1.25rem;">
           <div class="value-item"><div class="value-check">✓</div><div><strong>Trained, compassionate drivers</strong><p>Our team undergoes thorough training to ensure the safety and comfort of every rider.</p></div></div>
           <div class="value-item"><div class="value-check">✓</div><div><strong>Stair transport specialists</strong><p>We have the equipment and expertise to transport clients safely up or down stairs.</p></div></div>
           <div class="value-item"><div class="value-check">✓</div><div><strong>Fully ADA-compliant ramp vans</strong><p>Our modern fleet meets all ADA standards for comfortable, safe wheelchair transport.</p></div></div>
@@ -106,7 +122,7 @@ $img = get_template_directory_uri() . '/images/';
         <div style="background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-top:1.5rem;text-align:center;">
           <h3 style="margin-bottom:0.5rem;">Ready to Ride?</h3>
           <p style="font-size:0.92rem;margin-bottom:1.25rem;">Call us or send a message — we're available 24/7.</p>
-          <a href="tel:6305426398" class="btn btn-primary" style="width:100%;justify-content:center;">📞 (630) 542-6398</a>
+          <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-primary" style="width:100%;justify-content:center;">📞 <?php echo esc_html( $phone ); ?></a>
           <div style="margin:0.75rem 0;color:var(--text-light);font-size:0.85rem;">— or —</div>
           <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-outline-dark" style="width:100%;justify-content:center;">Send a Message</a>
         </div>
@@ -120,7 +136,7 @@ $img = get_template_directory_uri() . '/images/';
     <h2>Let Us Take Care of the Ride</h2>
     <p>Focus on what matters most. We'll handle the rest — safely, comfortably, and with a smile.</p>
     <div class="cta-actions">
-      <a href="tel:6305426398" class="btn btn-white btn-lg">📞 (630) 542-6398</a>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-white btn-lg">📞 <?php echo esc_html( $phone ); ?></a>
       <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-outline btn-lg">Book Online</a>
     </div>
   </div>

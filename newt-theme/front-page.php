@@ -4,7 +4,9 @@
  * The front page of the N.E.W.T. website.
  */
 get_header();
-$img = get_template_directory_uri() . '/images/';
+$img        = get_template_directory_uri() . '/images/';
+$phone      = newt_phone();
+$phone_raw  = newt_phone( true );
 ?>
 
 <!-- ===== HERO ===== -->
@@ -12,14 +14,14 @@ $img = get_template_directory_uri() . '/images/';
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <div class="hero-badge"><span>🚐</span> Serving Chicagoland Since 2007</div>
-        <h1>Where Can We<br>Take You Today?</h1>
-        <p>Compassionate, safe, and reliable non-emergency wheelchair transportation for medical appointments, social events, and everyday errands — available around the clock.</p>
+        <div class="hero-badge"><span>🚐</span> <?php echo esc_html( get_theme_mod( 'newt_hero_badge', '🚐 Serving Chicagoland Since 2007' ) ); ?></div>
+        <h1><?php echo esc_html( get_theme_mod( 'newt_hero_line1', 'Where Can We' ) ); ?><br><?php echo esc_html( get_theme_mod( 'newt_hero_line2', 'Take You Today?' ) ); ?></h1>
+        <p><?php echo esc_html( get_theme_mod( 'newt_hero_sub', 'Compassionate, safe, and reliable non-emergency wheelchair transportation for medical appointments, social events, and everyday errands — available around the clock.' ) ); ?></p>
         <div class="hero-actions">
           <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-lg">Book a Ride</a>
           <div class="hero-phone">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.76 19.79 19.79 0 01.01 1.11 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-            <a href="tel:6305426398" style="color:inherit;">(630) 542-6398</a>
+            <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" style="color:inherit;"><?php echo esc_html( $phone ); ?></a>
           </div>
         </div>
       </div>
@@ -38,10 +40,17 @@ $img = get_template_directory_uri() . '/images/';
 <div class="stats-bar">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-item"><div class="stat-number" data-count="5000" data-suffix="+">5,000+</div><div class="stat-label">Rides Completed</div></div>
-      <div class="stat-item"><div class="stat-number" data-count="15" data-suffix="+">15+</div><div class="stat-label">Years in Service</div></div>
-      <div class="stat-item"><div class="stat-number" data-count="100" data-suffix="%">100%</div><div class="stat-label">ADA Compliant Fleet</div></div>
-      <div class="stat-item"><div class="stat-number" data-count="24" data-suffix="/7">24/7</div><div class="stat-label">Service Availability</div></div>
+      <?php for ( $i = 1; $i <= 4; $i++ ) :
+        $num    = get_theme_mod( "newt_stat_{$i}_num",    [ '5000', '15', '100', '24' ][ $i - 1 ] );
+        $suffix = get_theme_mod( "newt_stat_{$i}_suffix", [ '+', '+', '%', '/7' ][ $i - 1 ] );
+        $label  = get_theme_mod( "newt_stat_{$i}_label",  [ 'Rides Completed', 'Years in Service', 'ADA Compliant Fleet', 'Service Availability' ][ $i - 1 ] );
+        $display = number_format( (float) $num ) . $suffix;
+      ?>
+      <div class="stat-item">
+        <div class="stat-number" data-count="<?php echo esc_attr( $num ); ?>" data-suffix="<?php echo esc_attr( $suffix ); ?>"><?php echo esc_html( $display ); ?></div>
+        <div class="stat-label"><?php echo esc_html( $label ); ?></div>
+      </div>
+      <?php endfor; ?>
     </div>
   </div>
 </div>
@@ -74,15 +83,44 @@ $img = get_template_directory_uri() . '/images/';
       <p>From routine medical appointments to birthday parties and everything in between, we're here to take you wherever life calls.</p>
     </div>
     <div class="services-grid">
-      <div class="service-item fade-up"><div class="service-icon">🏥</div><span>Medical Appointments</span></div>
-      <div class="service-item fade-up"><div class="service-icon">💒</div><span>Weddings &amp; Special Occasions</span></div>
-      <div class="service-item fade-up"><div class="service-icon">👨‍👩‍👧‍👦</div><span>Family Gatherings</span></div>
-      <div class="service-item fade-up"><div class="service-icon">⛪</div><span>Church Services</span></div>
-      <div class="service-item fade-up"><div class="service-icon">🎂</div><span>Birthday Parties</span></div>
-      <div class="service-item fade-up"><div class="service-icon">✝️</div><span>Christenings &amp; Baptisms</span></div>
-      <div class="service-item fade-up"><div class="service-icon">🛒</div><span>Shopping &amp; Errands</span></div>
-      <div class="service-item fade-up"><div class="service-icon">🎭</div><span>Group Events</span></div>
-      <div class="service-item fade-up"><div class="service-icon">✈️</div><span>Airport Transfers</span></div>
+      <?php
+      $services = new WP_Query( [
+          'post_type'      => 'newt_service',
+          'posts_per_page' => -1,
+          'orderby'        => 'menu_order',
+          'order'          => 'ASC',
+          'post_status'    => 'publish',
+      ] );
+
+      if ( $services->have_posts() ) :
+          while ( $services->have_posts() ) : $services->the_post();
+              $icon = get_post_meta( get_the_ID(), '_service_icon', true );
+      ?>
+          <div class="service-item fade-up">
+            <div class="service-icon"><?php echo esc_html( $icon ?: '🚐' ); ?></div>
+            <span><?php the_title(); ?></span>
+          </div>
+      <?php
+          endwhile;
+          wp_reset_postdata();
+      else :
+          // Fallback defaults if no services are in the database yet
+          $default_services = [
+              [ '🏥', 'Medical Appointments' ],
+              [ '💒', 'Weddings &amp; Special Occasions' ],
+              [ '👨‍👩‍👧‍👦', 'Family Gatherings' ],
+              [ '⛪', 'Church Services' ],
+              [ '🎂', 'Birthday Parties' ],
+              [ '✝️', 'Christenings &amp; Baptisms' ],
+              [ '🛒', 'Shopping &amp; Errands' ],
+              [ '🎭', 'Group Events' ],
+              [ '✈️', 'Airport Transfers' ],
+          ];
+          foreach ( $default_services as $s ) {
+              echo '<div class="service-item fade-up"><div class="service-icon">' . $s[0] . '</div><span>' . $s[1] . '</span></div>';
+          }
+      endif;
+      ?>
     </div>
   </div>
 </section>
@@ -132,9 +170,54 @@ $img = get_template_directory_uri() . '/images/';
       <p>Don't just take our word for it — hear from the families and individuals who trust us every day.</p>
     </div>
     <div class="testimonials-grid">
-      <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><blockquote>"N.E.W.T. has been absolutely wonderful for my mother. The driver is always punctual, incredibly kind, and treats her with so much dignity. We couldn't be more grateful."</blockquote><div class="testimonial-author"><div class="author-avatar">SM</div><div class="author-info"><strong>Sandra M.</strong><span>Naperville, IL</span></div></div></div>
-      <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><blockquote>"After my surgery I needed regular rides to physical therapy. N.E.W.T. was always there — on time, professional, and the van is spotless. Highly recommend!"</blockquote><div class="testimonial-author"><div class="author-avatar">RJ</div><div class="author-info"><strong>Robert J.</strong><span>Oak Park, IL</span></div></div></div>
-      <div class="testimonial-card fade-up"><div class="stars">★★★★★</div><blockquote>"They took my grandfather to our family reunion. He was so happy, and the driver was patient and helpful getting him in and out. It meant the world to our whole family."</blockquote><div class="testimonial-author"><div class="author-avatar">KL</div><div class="author-info"><strong>Karen L.</strong><span>Bolingbrook, IL</span></div></div></div>
+      <?php
+      $featured = new WP_Query( [
+          'post_type'      => 'newt_testimonial',
+          'posts_per_page' => 3,
+          'post_status'    => 'publish',
+          'orderby'        => 'menu_order',
+          'order'          => 'ASC',
+          'meta_query'     => [ [
+              'key'     => '_testimonial_featured',
+              'value'   => '1',
+              'compare' => '=',
+          ] ],
+      ] );
+
+      if ( $featured->have_posts() ) :
+          while ( $featured->have_posts() ) : $featured->the_post();
+              $location = get_post_meta( get_the_ID(), '_testimonial_location', true );
+              $rating   = (int) ( get_post_meta( get_the_ID(), '_testimonial_rating', true ) ?: 5 );
+              $stars    = str_repeat( '★', $rating ) . str_repeat( '☆', 5 - $rating );
+              $initials = implode( '', array_map( fn($w) => strtoupper( $w[0] ), array_filter( explode( ' ', get_the_title() ) ) ) );
+              $initials = substr( $initials, 0, 2 );
+      ?>
+          <div class="testimonial-card fade-up">
+            <div class="stars"><?php echo esc_html( $stars ); ?></div>
+            <blockquote>"<?php echo wp_kses_post( get_the_content() ); ?>"</blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar"><?php echo esc_html( $initials ); ?></div>
+              <div class="author-info">
+                <strong><?php the_title(); ?></strong>
+                <?php if ( $location ) : ?><span><?php echo esc_html( $location ); ?></span><?php endif; ?>
+              </div>
+            </div>
+          </div>
+      <?php
+          endwhile;
+          wp_reset_postdata();
+      else :
+          // Fallback if no testimonials in database yet
+          $fallbacks = [
+              [ 'SM', 'Sandra M.', 'Naperville, IL', 'N.E.W.T. has been absolutely wonderful for my mother. The driver is always punctual, incredibly kind, and treats her with so much dignity. We couldn\'t be more grateful.' ],
+              [ 'RJ', 'Robert J.', 'Oak Park, IL',   'After my surgery I needed regular rides to physical therapy. N.E.W.T. was always there — on time, professional, and the van is spotless. Highly recommend!' ],
+              [ 'KL', 'Karen L.',  'Bolingbrook, IL', 'They took my grandfather to our family reunion. He was so happy, and the driver was patient and helpful getting him in and out. It meant the world to our whole family.' ],
+          ];
+          foreach ( $fallbacks as $f ) {
+              echo '<div class="testimonial-card fade-up"><div class="stars">★★★★★</div><blockquote>"' . esc_html( $f[3] ) . '"</blockquote><div class="testimonial-author"><div class="author-avatar">' . esc_html( $f[0] ) . '</div><div class="author-info"><strong>' . esc_html( $f[1] ) . '</strong><span>' . esc_html( $f[2] ) . '</span></div></div></div>';
+          }
+      endif;
+      ?>
     </div>
     <div class="text-center mt-3">
       <a href="<?php echo esc_url( home_url( '/testimonials/' ) ); ?>" class="btn btn-outline-dark">Read More Stories</a>
@@ -145,10 +228,10 @@ $img = get_template_directory_uri() . '/images/';
 <!-- ===== CTA BANNER ===== -->
 <section class="cta-banner">
   <div class="container">
-    <h2>Ready to Book Your Ride?</h2>
-    <p>Call us anytime or fill out our convenient contact form — we're available 24/7 to help you get where you need to go.</p>
+    <h2><?php echo esc_html( get_theme_mod( 'newt_cta_headline', 'Ready to Book Your Ride?' ) ); ?></h2>
+    <p><?php echo esc_html( get_theme_mod( 'newt_cta_sub', "Call us anytime or fill out our convenient contact form — we're available 24/7 to help you get where you need to go." ) ); ?></p>
     <div class="cta-actions">
-      <a href="tel:6305426398" class="btn btn-white btn-lg">📞 (630) 542-6398</a>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-white btn-lg">📞 <?php echo esc_html( $phone ); ?></a>
       <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-outline btn-lg">Send a Message</a>
     </div>
   </div>
