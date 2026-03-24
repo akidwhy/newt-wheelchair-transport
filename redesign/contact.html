@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="css/v2.css" />
+  <link rel="stylesheet" href="css/v2-form.css" />
 </head>
 <body class="v2-wrap">
   <header class="v2-header">
@@ -31,51 +33,365 @@
     <section class="v2-page-hero">
       <div class="v2-page-hero-inner">
         <p class="v2-crumb"><a href="index.html">Home</a> · Contact</p>
-        <h1>Let’s plan your trip.</h1>
-        <p>This preview uses a short form. For the full ride request (times, addresses, medical details), use the main site’s contact page after deploy — or call us now.</p>
+        <h1>Book a ride or ask a question.</h1>
+        <p>Same full request form as the main site — Netlify submissions use the dynamic subject line and combined time fields when deployed.</p>
       </div>
     </section>
 
     <section class="v2-section">
-      <div class="v2-section-inner v2-contact-grid">
-        <aside class="v2-contact-card v2-reveal">
-          <h3>Direct line</h3>
-          <div class="v2-contact-row">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.86.35 1.7.7 2.5a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.8.35 1.64.6 2.5.7A2 2 0 0122 16.92z"/></svg>
-            <div><strong style="display:block;margin-bottom:0.2rem;">Phone (24/7)</strong><a href="tel:6305426398">(630) 542-6398</a></div>
-          </div>
-          <div class="v2-contact-row">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <div><strong style="display:block;margin-bottom:0.2rem;">Hours</strong>Open around the clock, holidays included.</div>
-          </div>
-          <div class="v2-contact-row">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div><strong style="display:block;margin-bottom:0.2rem;">Service area</strong>Greater Chicagoland, IL</div>
-          </div>
-        </aside>
+      <div class="v2-section-inner v2-form-full">
+        <div class="contact-grid">
 
-        <div class="v2-reveal">
-          <form class="v2-form" id="v2-quick-form" action="#" method="get" onsubmit="return false;">
-            <div class="v2-form-row2">
-              <div>
-                <label for="q-name">Full name</label>
-                <input type="text" id="q-name" name="name" autocomplete="name" required />
+          <div>
+            <div class="contact-info-card">
+              <h3>Get in touch</h3>
+              <p>Call for the fastest response, or complete the form — we reply to every request.</p>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                <div class="contact-detail-text">
+                  <strong>Phone (24/7)</strong>
+                  <a href="tel:6305426398">(630) 542-6398</a>
+                </div>
               </div>
-              <div>
-                <label for="q-phone">Phone</label>
-                <input type="tel" id="q-phone" name="phone" autocomplete="tel" required />
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                <div class="contact-detail-text">
+                  <strong>Service area</strong>
+                  <span>Greater Chicagoland, IL</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+                <div class="contact-detail-text">
+                  <strong>Hours</strong>
+                  <span>24 hours / 7 days — including holidays</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+                <div class="contact-detail-text">
+                  <strong>Response time</strong>
+                  <span>Same-day response on inquiries</span>
+                </div>
+              </div>
+
+              <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.2);">
+                <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Why families choose us</p>
+                <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                  <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;color:rgba(255,255,255,0.85);"><span style="color:#d4b84a;">✓</span> Caregiver rides free</div>
+                  <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;color:rgba(255,255,255,0.85);"><span style="color:#d4b84a;">✓</span> ADA-compliant ramp vans</div>
+                  <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;color:rgba(255,255,255,0.85);"><span style="color:#d4b84a;">✓</span> Stair-capable team</div>
+                  <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;color:rgba(255,255,255,0.85);"><span style="color:#d4b84a;">✓</span> Family owned &amp; operated</div>
+                </div>
               </div>
             </div>
-            <label for="q-email">Email</label>
-            <input type="email" id="q-email" name="email" autocomplete="email" />
-            <label for="q-date">Preferred trip date</label>
-            <input type="date" id="q-date" name="date" />
-            <label for="q-msg">How can we help?</label>
-            <textarea id="q-msg" name="message" rows="5" placeholder="Pickup area, destination type, wheelchair needs, stair access…"></textarea>
-            <button type="submit" class="v2-btn v2-btn-primary">Send message (demo)</button>
-          </form>
-          <p class="v2-note"><strong>Production booking:</strong> the full multi-section form with Netlify or WordPress integration lives on the main site at <a href="../contact.html">../contact.html</a> when served from the repo root.</p>
+          </div>
+
+          <div>
+            <div class="contact-form-card">
+              <h3>Book a ride</h3>
+              <p>For urgent needs, call <a href="tel:6305426398">(630) 542-6398</a>. Otherwise, complete all sections below.</p>
+
+              <form id="contact-form" name="contact" method="POST" data-netlify="true" action="contact.html?sent=1" novalidate>
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="subject" id="form-subject" data-remove-prefix value="New Ride Request" />
+
+                <div class="form-section">
+                  <h4 class="form-section-title">Date &amp; time</h4>
+
+                  <div class="form-group">
+                    <label for="trip-date">Date of Trip <span class="req">*</span></label>
+                    <input type="date" id="trip-date" name="Date of Trip" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Time of Appointment <span class="req">*</span></label>
+                    <input type="hidden" name="Appointment Time" id="combined-appt-time" />
+                    <div class="time-picker">
+                      <select id="appt-hour" aria-label="Appointment hour">
+                        <option value="">Hour</option>
+                        <option>12</option><option>01</option><option>02</option><option>03</option>
+                        <option>04</option><option>05</option><option>06</option><option>07</option>
+                        <option>08</option><option>09</option><option>10</option><option>11</option>
+                      </select>
+                      <select id="appt-min" aria-label="Appointment minutes">
+                        <option value="">Min</option>
+                        <option>00</option><option>05</option><option>10</option><option>15</option>
+                        <option>20</option><option>25</option><option>30</option><option>35</option>
+                        <option>40</option><option>45</option><option>50</option><option>55</option>
+                      </select>
+                      <select id="appt-ampm" aria-label="AM or PM">
+                        <option value="">AM/PM</option>
+                        <option>AM</option><option>PM</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Expected Pick-up Time <span class="req">*</span></label>
+                    <input type="hidden" name="Expected Pickup Time" id="combined-pickup-time" />
+                    <div class="time-picker">
+                      <select id="pickup-hour" aria-label="Pickup hour">
+                        <option value="">Hour</option>
+                        <option>12</option><option>01</option><option>02</option><option>03</option>
+                        <option>04</option><option>05</option><option>06</option><option>07</option>
+                        <option>08</option><option>09</option><option>10</option><option>11</option>
+                      </select>
+                      <select id="pickup-min" aria-label="Pickup minutes">
+                        <option value="">Min</option>
+                        <option>00</option><option>05</option><option>10</option><option>15</option>
+                        <option>20</option><option>25</option><option>30</option><option>35</option>
+                        <option>40</option><option>45</option><option>50</option><option>55</option>
+                      </select>
+                      <select id="pickup-ampm" aria-label="AM or PM">
+                        <option value="">AM/PM</option>
+                        <option>AM</option><option>PM</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Anticipated Return Time <span class="req">*</span></label>
+                    <input type="hidden" name="Anticipated Return Time" id="combined-return-time" />
+                    <div class="time-picker">
+                      <select id="return-hour" aria-label="Return hour">
+                        <option value="">Hour</option>
+                        <option>12</option><option>01</option><option>02</option><option>03</option>
+                        <option>04</option><option>05</option><option>06</option><option>07</option>
+                        <option>08</option><option>09</option><option>10</option><option>11</option>
+                      </select>
+                      <select id="return-min" aria-label="Return minutes">
+                        <option value="">Min</option>
+                        <option>00</option><option>05</option><option>10</option><option>15</option>
+                        <option>20</option><option>25</option><option>30</option><option>35</option>
+                        <option>40</option><option>45</option><option>50</option><option>55</option>
+                      </select>
+                      <select id="return-ampm" aria-label="AM or PM">
+                        <option value="">AM/PM</option>
+                        <option>AM</option><option>PM</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Trip Type <span class="req">*</span></label>
+                    <div class="radio-group">
+                      <label class="radio-label"><input type="radio" name="Trip Type" value="Round Trip" required /> Round Trip</label>
+                      <label class="radio-label"><input type="radio" name="Trip Type" value="One Way" /> One Way</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h4 class="form-section-title">Passenger</h4>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="pax-first">Passenger First Name <span class="req">*</span></label>
+                      <input type="text" id="pax-first" name="Passenger First Name" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="pax-last">Passenger Last Name <span class="req">*</span></label>
+                      <input type="text" id="pax-last" name="Passenger Last Name" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="pax-phone">Passenger Phone Number</label>
+                    <input type="tel" id="pax-phone" name="Passenger Phone" placeholder="(630) 555-0100" />
+                  </div>
+                  <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="hidden" name="Date of Birth" id="combined-dob" />
+                    <div class="dob-picker">
+                      <select id="dob-month" aria-label="Birth month">
+                        <option value="">Month</option>
+                        <option value="1">January</option><option value="2">February</option>
+                        <option value="3">March</option><option value="4">April</option>
+                        <option value="5">May</option><option value="6">June</option>
+                        <option value="7">July</option><option value="8">August</option>
+                        <option value="9">September</option><option value="10">October</option>
+                        <option value="11">November</option><option value="12">December</option>
+                      </select>
+                      <select id="dob-day" aria-label="Birth day">
+                        <option value="">Day</option>
+                        <option>1</option><option>2</option><option>3</option><option>4</option>
+                        <option>5</option><option>6</option><option>7</option><option>8</option>
+                        <option>9</option><option>10</option><option>11</option><option>12</option>
+                        <option>13</option><option>14</option><option>15</option><option>16</option>
+                        <option>17</option><option>18</option><option>19</option><option>20</option>
+                        <option>21</option><option>22</option><option>23</option><option>24</option>
+                        <option>25</option><option>26</option><option>27</option><option>28</option>
+                        <option>29</option><option>30</option><option>31</option>
+                      </select>
+                      <select id="dob-year-select" aria-label="Birth year">
+                        <option value="">Year</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h4 class="form-section-title">Contact</h4>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="contact-first">Contact First Name <span class="req">*</span></label>
+                      <input type="text" id="contact-first" name="Contact First Name" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="contact-last">Contact Last Name <span class="req">*</span></label>
+                      <input type="text" id="contact-last" name="Contact Last Name" required />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="contact-phone">Contact Phone <span class="req">*</span></label>
+                      <input type="tel" id="contact-phone" name="Contact Phone" placeholder="(630) 555-0100" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="contact-phone2">Secondary Phone Number</label>
+                      <input type="tel" id="contact-phone2" name="Secondary Phone" placeholder="(630) 555-0100" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" name="email" placeholder="you@example.com" />
+                  </div>
+                  <div class="form-group">
+                    <label>Preferred Method of Communication</label>
+                    <div class="radio-group">
+                      <label class="radio-label"><input type="radio" name="Preferred Contact Method" value="Phone Call" /> Phone Call</label>
+                      <label class="radio-label"><input type="radio" name="Preferred Contact Method" value="Text Msg" /> Text Msg</label>
+                      <label class="radio-label"><input type="radio" name="Preferred Contact Method" value="Email" /> Email</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h4 class="form-section-title">Locations</h4>
+                  <div class="form-group">
+                    <label for="pickup-street">Pick-up Street Address <span class="req">*</span></label>
+                    <input type="text" id="pickup-street" name="Pickup Street Address" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="pickup-apt">Pickup Apt/Suite</label>
+                    <input type="text" id="pickup-apt" name="Pickup Apt/Suite" />
+                  </div>
+                  <div class="form-row three-col">
+                    <div class="form-group">
+                      <label for="pickup-city">Pickup City <span class="req">*</span></label>
+                      <input type="text" id="pickup-city" name="Pickup City" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="pickup-state">Pickup State</label>
+                      <input type="text" id="pickup-state" name="Pickup State" placeholder="IL" />
+                    </div>
+                    <div class="form-group">
+                      <label for="pickup-zip">Pickup ZIP</label>
+                      <input type="text" id="pickup-zip" name="Pickup ZIP" placeholder="60540" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Stairs? <span class="req">*</span></label>
+                    <p class="form-hint">Does either the pick-up or destination location have stairs?</p>
+                    <div class="radio-group">
+                      <label class="radio-label"><input type="radio" name="Stairs at Location" value="Yes" required /> Yes</label>
+                      <label class="radio-label"><input type="radio" name="Stairs at Location" value="No" /> No</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Wheelchair? <span class="req">*</span></label>
+                    <p class="form-hint">Will you require the use of our wheelchair?</p>
+                    <div class="radio-group">
+                      <label class="radio-label"><input type="radio" name="Wheelchair Needed" value="Yes" required /> Yes</label>
+                      <label class="radio-label"><input type="radio" name="Wheelchair Needed" value="No" /> No</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group" style="margin-top:1.25rem;">
+                    <label for="dest-street">Destination Street Address <span class="req">*</span></label>
+                    <input type="text" id="dest-street" name="Destination Street Address" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="dest-apt">Destination Apt/Suite</label>
+                    <input type="text" id="dest-apt" name="Destination Apt/Suite" />
+                  </div>
+                  <div class="form-row three-col">
+                    <div class="form-group">
+                      <label for="dest-city">Destination City <span class="req">*</span></label>
+                      <input type="text" id="dest-city" name="Destination City" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="dest-state">Destination State</label>
+                      <input type="text" id="dest-state" name="Destination State" placeholder="IL" />
+                    </div>
+                    <div class="form-group">
+                      <label for="dest-zip">Destination ZIP</label>
+                      <input type="text" id="dest-zip" name="Destination ZIP" placeholder="60540" />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="additional-info">Additional Information</label>
+                    <textarea id="additional-info" name="Additional Information" placeholder="Any special requirements or notes…"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h4 class="form-section-title">Terms and Conditions of Service</h4>
+                  <div class="terms-box">
+                    All trips are either prepaid or paid in full at conclusion of trip by cash, check or credit card. All first time riders are required to pay a $50 deposit that is then deducted from the final cost of the trip. Trips that cancel with less than a 48 hour notice are subject to a $50 cancellation fee. Trips that are canceled on arrival are subject to a $100 cancellation fee. One hour of wait time is included in each trip, after that first hour a $48 per hour wait time fee is charged. All riders using their own wheelchair must have the accompanying foot supports for their safety. We reserve the right to cancel any trip we deem unsafe for the person we are transporting or our employee.
+                  </div>
+                  <div class="form-group" style="margin-top:1rem;margin-bottom:0;">
+                    <label class="checkbox-label">
+                      <input type="checkbox" name="Terms Agreed" required />
+                      I have read and agree to the terms and conditions of service shown above. <span class="req">*</span>
+                    </label>
+                  </div>
+                </div>
+
+                <button type="submit" class="form-submit">Send message</button>
+              </form>
+
+              <div id="form-success" class="success-message">
+                Thank you — we’ve received your request and will be in touch shortly. For urgent needs, call (630) 542-6398.
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <div class="v2-area-section">
+          <div class="v2-area-head">
+            <h2>Service area</h2>
+            <p>Greater Chicagoland and beyond. Don’t see your town? Call — we may still be able to help.</p>
+          </div>
+          <div class="area-tags">
+            <span class="area-tag">Chicago</span>
+            <span class="area-tag">Naperville</span>
+            <span class="area-tag">Aurora</span>
+            <span class="area-tag">Joliet</span>
+            <span class="area-tag">Elgin</span>
+            <span class="area-tag">Evanston</span>
+            <span class="area-tag">Schaumburg</span>
+            <span class="area-tag">Bolingbrook</span>
+            <span class="area-tag">Oak Park</span>
+            <span class="area-tag">Tinley Park</span>
+            <span class="area-tag">Lombard</span>
+            <span class="area-tag">Arlington Heights</span>
+            <span class="area-tag">And more</span>
+          </div>
+          <p style="text-align:center;margin-top:1.25rem;font-size:0.9rem;color:var(--text-light);">Long-distance trips available — ask when you call.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="v2-cta v2-reveal">
+      <h2>Need a ride right away?</h2>
+      <p>We answer the phone 24 hours a day.</p>
+      <div class="v2-cta-actions">
+        <a href="tel:6305426398" class="v2-btn v2-btn-primary"><i class="fa-solid fa-phone"></i> (630) 542-6398</a>
       </div>
     </section>
   </main>
@@ -104,6 +420,8 @@
     </div>
     <div class="v2-footer-bottom">© N.E.W.T. · Alternate design preview</div>
   </footer>
+
   <script src="js/v2.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
