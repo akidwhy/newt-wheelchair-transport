@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact N.E.W.T. — book wheelchair transport in Chicagoland." />
+  <title>Contact — N.E.W.T.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/v2.css" />
+</head>
+<body class="v2-wrap">
+  <header class="v2-header">
+    <div class="v2-header-inner">
+      <a href="index.html" class="v2-logo">
+        <img src="../images/logo.png" alt="N.E.W.T." />
+      </a>
+      <nav class="v2-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="testimonials.html">Stories</a>
+        <a href="contact.html" class="v2-btn v2-btn-primary" style="margin-left:0.5rem;" aria-current="page">Book a ride</a>
+      </nav>
+      <button type="button" class="v2-burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main class="v2-main">
+    <section class="v2-page-hero">
+      <div class="v2-page-hero-inner">
+        <p class="v2-crumb"><a href="index.html">Home</a> · Contact</p>
+        <h1>Let’s plan your trip.</h1>
+        <p>This preview uses a short form. For the full ride request (times, addresses, medical details), use the main site’s contact page after deploy — or call us now.</p>
+      </div>
+    </section>
+
+    <section class="v2-section">
+      <div class="v2-section-inner v2-contact-grid">
+        <aside class="v2-contact-card v2-reveal">
+          <h3>Direct line</h3>
+          <div class="v2-contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.86.35 1.7.7 2.5a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.8.35 1.64.6 2.5.7A2 2 0 0122 16.92z"/></svg>
+            <div><strong style="display:block;margin-bottom:0.2rem;">Phone (24/7)</strong><a href="tel:6305426398">(630) 542-6398</a></div>
+          </div>
+          <div class="v2-contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div><strong style="display:block;margin-bottom:0.2rem;">Hours</strong>Open around the clock, holidays included.</div>
+          </div>
+          <div class="v2-contact-row">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong style="display:block;margin-bottom:0.2rem;">Service area</strong>Greater Chicagoland, IL</div>
+          </div>
+        </aside>
+
+        <div class="v2-reveal">
+          <form class="v2-form" id="v2-quick-form" action="#" method="get" onsubmit="return false;">
+            <div class="v2-form-row2">
+              <div>
+                <label for="q-name">Full name</label>
+                <input type="text" id="q-name" name="name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="q-phone">Phone</label>
+                <input type="tel" id="q-phone" name="phone" autocomplete="tel" required />
+              </div>
+            </div>
+            <label for="q-email">Email</label>
+            <input type="email" id="q-email" name="email" autocomplete="email" />
+            <label for="q-date">Preferred trip date</label>
+            <input type="date" id="q-date" name="date" />
+            <label for="q-msg">How can we help?</label>
+            <textarea id="q-msg" name="message" rows="5" placeholder="Pickup area, destination type, wheelchair needs, stair access…"></textarea>
+            <button type="submit" class="v2-btn v2-btn-primary">Send message (demo)</button>
+          </form>
+          <p class="v2-note"><strong>Production booking:</strong> the full multi-section form with Netlify or WordPress integration lives on the main site at <a href="../contact.html">../contact.html</a> when served from the repo root.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="v2-footer">
+    <div class="v2-footer-inner">
+      <div class="v2-footer-brand">
+        <img src="../images/logo.png" alt="" />
+        <p>Non-emergency wheelchair transportation for Chicagoland.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="testimonials.html">Stories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <ul>
+          <li><a href="tel:6305426398">(630) 542-6398</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="v2-footer-bottom">© N.E.W.T. · Alternate design preview</div>
+  </footer>
+  <script src="js/v2.js"></script>
+</body>
+</html>
