@@ -195,7 +195,8 @@ ul.mobile-nav-links > li:last-child > a:hover { background: var(--accent-dark); 
 .hero-card h3 { color: var(--white); margin-bottom: 1.25rem; font-size: 1.1rem; }
 .hero-feature { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.85rem; }
 .hero-feature:last-child { margin-bottom: 0; }
-.hero-feature-icon { width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem; }
+.hero-feature-icon { width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; color: #fff; }
+.hero-feature-icon i { color: #fff; }
 .hero-feature p { color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-top: 0.1rem; }
 .hero-feature strong { color: var(--white); font-size: 0.95rem; }
 
@@ -214,7 +215,8 @@ ul.mobile-nav-links > li:last-child > a:hover { background: var(--accent-dark); 
 .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
 .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: all var(--transition); }
 .feature-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: transparent; }
-.feature-icon { width: 52px; height: 52px; background: var(--light-bg); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; font-size: 1.4rem; }
+.feature-icon { width: 52px; height: 52px; background: var(--primary-bg, #eef4ff); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; font-size: 1.3rem; color: var(--primary); }
+.feature-icon i { color: var(--primary); }
 .feature-card h3 { margin-bottom: 0.5rem; }
 .feature-card p { font-size: 0.92rem; }
 
@@ -224,7 +226,10 @@ ul.mobile-nav-links > li:last-child > a:hover { background: var(--accent-dark); 
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .service-item { display: flex; align-items: center; gap: 0.9rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: all var(--transition); }
 .service-item:hover { background: var(--light-bg); border-color: var(--primary-light); transform: translateX(4px); }
-.service-icon { width: 40px; height: 40px; background: var(--light-bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.service-icon { width: 40px; height: 40px; background: var(--primary-bg, #eef4ff); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; color: var(--primary); }
+.service-icon i { color: var(--primary); }
+.service-item:hover .service-icon { background: var(--primary); }
+.service-item:hover .service-icon i { color: #fff; }
 .service-item span { font-weight: 600; font-size: 0.92rem; color: var(--text-dark); }
 
 /* =============================================
@@ -265,7 +270,8 @@ ul.mobile-nav-links > li:last-child > a:hover { background: var(--accent-dark); 
 .vehicle-thumb-caption span { font-size: 0.8rem; color: var(--text-light); }
 .vehicle-features { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
 .vehicle-feat-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--text-mid); }
-.vehicle-feat-icon { font-size: 1rem; flex-shrink: 0; }
+.vehicle-feat-icon { font-size: 1rem; flex-shrink: 0; color: var(--primary); width: 20px; text-align: center; }
+.vehicle-feat-icon i { color: var(--primary); }
 
 /* =============================================
    Page Hero & Breadcrumb
@@ -291,7 +297,8 @@ ul.mobile-nav-links > li:last-child > a:hover { background: var(--accent-dark); 
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .value-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; transition: all var(--transition); }
 .value-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: transparent; }
-.value-card-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+.value-card-icon { font-size: 2rem; margin-bottom: 0.75rem; color: var(--primary); }
+.value-card-icon i { color: var(--primary); }
 .value-card h3 { margin-bottom: 0.5rem; }
 .value-card p { font-size: 0.9rem; }
 .about-vehicles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }

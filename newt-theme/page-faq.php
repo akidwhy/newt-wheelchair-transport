@@ -108,7 +108,7 @@ if ( $use_fallback ) {
       <h3 style="margin-bottom:0.5rem;">Still Have Questions?</h3>
       <p style="margin-bottom:1.5rem;max-width:420px;margin-left:auto;margin-right:auto;">We're happy to help! Give us a call or send us a message.</p>
       <div class="gap-actions" style="justify-content:center;">
-        <a href="tel:<?php echo esc_attr( newt_phone( true ) ); ?>" class="btn btn-primary btn-lg">📞 <?php echo esc_html( newt_phone() ); ?></a>
+        <a href="tel:<?php echo esc_attr( newt_phone( true ) ); ?>" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> <?php echo esc_html( newt_phone() ); ?></a>
         <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-outline-dark btn-lg">Send a Message</a>
       </div>
     </div>

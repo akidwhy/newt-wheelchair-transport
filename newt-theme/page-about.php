@@ -64,12 +64,12 @@ $default_story = '<p>N.E.W.T. was founded with one core mission: to give wheelch
       <p>Every decision we make is guided by a set of core values that put our riders first.</p>
     </div>
     <div class="values-grid">
-      <div class="value-card fade-up"><div class="value-card-icon">❤️</div><h3>Compassion</h3><p>We treat every rider with the warmth, patience, and respect they deserve.</p></div>
-      <div class="value-card fade-up"><div class="value-card-icon">🛡️</div><h3>Safety</h3><p>Our drivers are trained, our vehicles are maintained, and our equipment is inspected before every ride.</p></div>
-      <div class="value-card fade-up"><div class="value-card-icon">⏰</div><h3>Reliability</h3><p>When you count on us, we show up — on time, every time.</p></div>
-      <div class="value-card fade-up"><div class="value-card-icon">🤝</div><h3>Dignity</h3><p>Our approach is always respectful, never rushed, and always attentive.</p></div>
-      <div class="value-card fade-up"><div class="value-card-icon">🏡</div><h3>Community</h3><p>We are proud members of the Chicagoland community.</p></div>
-      <div class="value-card fade-up"><div class="value-card-icon">🌟</div><h3>Excellence</h3><p>Every detail of the ride experience is something we take pride in.</p></div>
+      <div class="value-card fade-up"><div class="value-card-icon"><i class="fa-solid fa-heart"></i></div><h3>Compassion</h3><p>We treat every rider with the warmth, patience, and respect they deserve.</p></div>
+      <div class="value-card fade-up"><div class="value-card-icon"><i class="fa-solid fa-shield-halved"></i></div><h3>Safety</h3><p>Our drivers are trained, our vehicles are maintained, and our equipment is inspected before every ride.</p></div>
+      <div class="value-card fade-up"><div class="value-card-icon"><i class="fa-solid fa-clock"></i></div><h3>Reliability</h3><p>When you count on us, we show up — on time, every time.</p></div>
+      <div class="value-card fade-up"><div class="value-card-icon"><i class="fa-solid fa-handshake"></i></div><h3>Dignity</h3><p>Our approach is always respectful, never rushed, and always attentive.</p></div>
+      <div class="value-card fade-up"><div class="value-card-icon"><i class="fa-solid fa-house"></i></div><h3>Community</h3><p>We are proud members of the Chicagoland community.</p></div>
+      <div class="value-card fade-up"><div class="value-card-icon"><i class="fa-solid fa-star"></i></div><h3>Excellence</h3><p>Every detail of the ride experience is something we take pride in.</p></div>
     </div>
   </div>
 </section>
@@ -122,7 +122,7 @@ $default_story = '<p>N.E.W.T. was founded with one core mission: to give wheelch
         <div style="background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-top:1.5rem;text-align:center;">
           <h3 style="margin-bottom:0.5rem;">Ready to Ride?</h3>
           <p style="font-size:0.92rem;margin-bottom:1.25rem;">Call us or send a message — we're available 24/7.</p>
-          <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-primary" style="width:100%;justify-content:center;">📞 <?php echo esc_html( $phone ); ?></a>
+          <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fa-solid fa-phone"></i> <?php echo esc_html( $phone ); ?></a>
           <div style="margin:0.75rem 0;color:var(--text-light);font-size:0.85rem;">— or —</div>
           <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-outline-dark" style="width:100%;justify-content:center;">Send a Message</a>
         </div>
@@ -136,7 +136,7 @@ $default_story = '<p>N.E.W.T. was founded with one core mission: to give wheelch
     <h2>Let Us Take Care of the Ride</h2>
     <p>Focus on what matters most. We'll handle the rest — safely, comfortably, and with a smile.</p>
     <div class="cta-actions">
-      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-white btn-lg">📞 <?php echo esc_html( $phone ); ?></a>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-white btn-lg"><i class="fa-solid fa-phone"></i> <?php echo esc_html( $phone ); ?></a>
       <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-outline btn-lg">Book Online</a>
     </div>
   </div>

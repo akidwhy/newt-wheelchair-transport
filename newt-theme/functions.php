@@ -29,9 +29,15 @@ function newt_scripts() {
         null
     );
     wp_enqueue_style(
+        'newt-font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css',
+        [],
+        null
+    );
+    wp_enqueue_style(
         'newt-style',
         get_stylesheet_uri(),
-        [ 'newt-google-fonts' ],
+        [ 'newt-google-fonts', 'newt-font-awesome' ],
         '1.0'
     );
     wp_enqueue_script(
@@ -259,7 +265,7 @@ function newt_customizer( $wp_customize ) {
         'panel' => 'newt_panel',
     ] );
     $wp_customize->add_setting( 'newt_hero_badge', [
-        'default'           => '🚐 Serving Chicagoland Since 2007',
+        'default'           => 'Serving Chicagoland Since 2007',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ] );

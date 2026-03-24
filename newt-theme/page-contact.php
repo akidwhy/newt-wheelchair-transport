@@ -220,7 +220,7 @@ $sent = isset( $_GET['sent'] ) && $_GET['sent'] === '1';
     <h2>Need a Ride Right Away?</h2>
     <p>Call us directly — we're available 24 hours a day, 7 days a week, including holidays.</p>
     <div class="cta-actions">
-      <a href="tel:6305426398" class="btn btn-white btn-lg">📞 (630) 542-6398</a>
+      <a href="tel:6305426398" class="btn btn-white btn-lg"><i class="fa-solid fa-phone"></i> (630) 542-6398</a>
     </div>
   </div>
 </section>

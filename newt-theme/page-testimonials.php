@@ -149,7 +149,7 @@ if ( ! $featured_item && ! empty( $testimonials ) ) {
     <h2>Experience the N.E.W.T. Difference</h2>
     <p>Join hundreds of families across Chicagoland who trust us every day.</p>
     <div class="cta-actions">
-      <a href="tel:<?php echo esc_attr( newt_phone( true ) ); ?>" class="btn btn-white btn-lg">📞 <?php echo esc_html( newt_phone() ); ?></a>
+      <a href="tel:<?php echo esc_attr( newt_phone( true ) ); ?>" class="btn btn-white btn-lg"><i class="fa-solid fa-phone"></i> <?php echo esc_html( newt_phone() ); ?></a>
       <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-outline btn-lg">Book Online</a>
     </div>
   </div>

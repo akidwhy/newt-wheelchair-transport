@@ -319,8 +319,10 @@ p  { color: var(--text-mid); }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  color: #fff;
 }
+.hero-feature-icon i { color: #fff; }
 .hero-feature p {
   color: rgba(255,255,255,0.85);
   font-size: 0.9rem;
@@ -375,14 +377,16 @@ p  { color: var(--text-mid); }
 .feature-icon {
   width: 52px;
   height: 52px;
-  background: var(--light-bg);
+  background: var(--primary-bg, #eef4ff);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  color: var(--primary);
 }
+.feature-icon i { color: var(--primary); }
 .feature-card h3 { margin-bottom: 0.5rem; }
 .feature-card p { font-size: 0.92rem; }
 
@@ -410,14 +414,18 @@ p  { color: var(--text-mid); }
 .service-icon {
   width: 40px;
   height: 40px;
-  background: var(--light-bg);
+  background: var(--primary-bg, #eef4ff);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
+  color: var(--primary);
 }
+.service-icon i { color: var(--primary); }
+.service-item:hover .service-icon { background: var(--primary); }
+.service-item:hover .service-icon i { color: #fff; }
 .service-item span {
   font-weight: 600;
   font-size: 0.92rem;
@@ -597,7 +605,11 @@ p  { color: var(--text-mid); }
 .vehicle-feat-icon {
   font-size: 1rem;
   flex-shrink: 0;
+  color: var(--primary);
+  width: 20px;
+  text-align: center;
 }
+.vehicle-feat-icon i { color: var(--primary); }
 @media (max-width: 768px) {
   .vehicles-showcase { grid-template-columns: 1fr; }
   .vehicle-main img { height: 220px; }
@@ -730,7 +742,8 @@ p  { color: var(--text-mid); }
   transform: translateY(-4px);
   border-color: transparent;
 }
-.value-card-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+.value-card-icon { font-size: 2rem; margin-bottom: 0.75rem; color: var(--primary); }
+.value-card-icon i { color: var(--primary); }
 .value-card h3 { margin-bottom: 0.5rem; }
 .value-card p { font-size: 0.9rem; }
 

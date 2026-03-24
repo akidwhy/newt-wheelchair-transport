@@ -14,7 +14,7 @@ $phone_raw  = newt_phone( true );
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <div class="hero-badge"><span>🚐</span> <?php echo esc_html( get_theme_mod( 'newt_hero_badge', '🚐 Serving Chicagoland Since 2007' ) ); ?></div>
+        <div class="hero-badge"><i class="fa-solid fa-van-shuttle"></i> <?php echo esc_html( get_theme_mod( 'newt_hero_badge', 'Serving Chicagoland Since 2007' ) ); ?></div>
         <h1><?php echo esc_html( get_theme_mod( 'newt_hero_line1', 'Where Can We' ) ); ?><br><?php echo esc_html( get_theme_mod( 'newt_hero_line2', 'Take You Today?' ) ); ?></h1>
         <p><?php echo esc_html( get_theme_mod( 'newt_hero_sub', 'Compassionate, safe, and reliable non-emergency wheelchair transportation for medical appointments, social events, and everyday errands — available around the clock.' ) ); ?></p>
         <div class="hero-actions">
@@ -25,12 +25,12 @@ $phone_raw  = newt_phone( true );
           </div>
         </div>
       </div>
-      <div class="hero-card fade-up">
+        <div class="hero-card fade-up">
         <h3>Why Choose N.E.W.T.?</h3>
-        <div class="hero-feature"><div class="hero-feature-icon">👨‍👩‍👧</div><div><strong>Family Owned &amp; Operated</strong><p>Personal, caring service every single ride</p></div></div>
-        <div class="hero-feature"><div class="hero-feature-icon">♿</div><div><strong>ADA-Compliant Ramp Vans</strong><p>Comfortable, modern, fully equipped vehicles</p></div></div>
-        <div class="hero-feature"><div class="hero-feature-icon">🕐</div><div><strong>24/7 Availability</strong><p>Around-the-clock service, 365 days a year</p></div></div>
-        <div class="hero-feature"><div class="hero-feature-icon">🚶</div><div><strong>Stair-Capable Team</strong><p>Equipment &amp; training to navigate any home</p></div></div>
+        <div class="hero-feature"><div class="hero-feature-icon"><i class="fa-solid fa-people-group"></i></div><div><strong>Family Owned &amp; Operated</strong><p>Personal, caring service every single ride</p></div></div>
+        <div class="hero-feature"><div class="hero-feature-icon"><i class="fa-solid fa-wheelchair"></i></div><div><strong>ADA-Compliant Ramp Vans</strong><p>Comfortable, modern, fully equipped vehicles</p></div></div>
+        <div class="hero-feature"><div class="hero-feature-icon"><i class="fa-solid fa-clock"></i></div><div><strong>24/7 Availability</strong><p>Around-the-clock service, 365 days a year</p></div></div>
+        <div class="hero-feature"><div class="hero-feature-icon"><i class="fa-solid fa-stairs"></i></div><div><strong>Stair-Capable Team</strong><p>Equipment &amp; training to navigate any home</p></div></div>
       </div>
     </div>
   </div>
@@ -64,12 +64,12 @@ $phone_raw  = newt_phone( true );
       <p>You never have to give up the quality of your life when you become wheelchair-bound. Our specially trained and compassionate team goes the extra mile for you.</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card fade-up"><div class="feature-icon">👨‍👩‍👧</div><h3>Family Owned &amp; Operated</h3><p>We treat every rider like family. Our personal approach means you always speak with someone who genuinely cares.</p></div>
-      <div class="feature-card fade-up"><div class="feature-icon">🏠</div><h3>Facilities &amp; Private Residences</h3><p>We pick up from nursing facilities, assisted living centers, hospitals, and private homes alike.</p></div>
-      <div class="feature-card fade-up"><div class="feature-icon">🪜</div><h3>Stair Transport Experts</h3><p>We have the specialized equipment and training to safely transport clients up or down stairs.</p></div>
-      <div class="feature-card fade-up"><div class="feature-icon">💛</div><h3>Caregiver Rides Free</h3><p>A family member or caregiver can ride along at absolutely no additional charge.</p></div>
-      <div class="feature-card fade-up"><div class="feature-icon">🛣️</div><h3>Long Distance Available</h3><p>Need to travel further? We offer long-distance service beyond the Chicagoland area.</p></div>
-      <div class="feature-card fade-up"><div class="feature-icon">💳</div><h3>Competitive Rates</h3><p>Transparent pricing with all major credit cards accepted. Quality transport should be accessible.</p></div>
+      <div class="feature-card fade-up"><div class="feature-icon"><i class="fa-solid fa-people-group"></i></div><h3>Family Owned &amp; Operated</h3><p>We treat every rider like family. Our personal approach means you always speak with someone who genuinely cares.</p></div>
+      <div class="feature-card fade-up"><div class="feature-icon"><i class="fa-solid fa-building"></i></div><h3>Facilities &amp; Private Residences</h3><p>We pick up from nursing facilities, assisted living centers, hospitals, and private homes alike.</p></div>
+      <div class="feature-card fade-up"><div class="feature-icon"><i class="fa-solid fa-stairs"></i></div><h3>Stair Transport Experts</h3><p>We have the specialized equipment and training to safely transport clients up or down stairs.</p></div>
+      <div class="feature-card fade-up"><div class="feature-icon"><i class="fa-solid fa-user-group"></i></div><h3>Caregiver Rides Free</h3><p>A family member or caregiver can ride along at absolutely no additional charge.</p></div>
+      <div class="feature-card fade-up"><div class="feature-icon"><i class="fa-solid fa-road"></i></div><h3>Long Distance Available</h3><p>Need to travel further? We offer long-distance service beyond the Chicagoland area.</p></div>
+      <div class="feature-card fade-up"><div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div><h3>Competitive Rates</h3><p>Transparent pricing with all major credit cards accepted. Quality transport should be accessible.</p></div>
     </div>
   </div>
 </section>
@@ -106,18 +106,18 @@ $phone_raw  = newt_phone( true );
       else :
           // Fallback defaults if no services are in the database yet
           $default_services = [
-              [ '🏥', 'Medical Appointments' ],
-              [ '💒', 'Weddings &amp; Special Occasions' ],
-              [ '👨‍👩‍👧‍👦', 'Family Gatherings' ],
-              [ '⛪', 'Church Services' ],
-              [ '🎂', 'Birthday Parties' ],
-              [ '✝️', 'Christenings &amp; Baptisms' ],
-              [ '🛒', 'Shopping &amp; Errands' ],
-              [ '🎭', 'Group Events' ],
-              [ '✈️', 'Airport Transfers' ],
+              [ 'fa-hospital',        'Medical Appointments' ],
+              [ 'fa-ring',            'Weddings &amp; Special Occasions' ],
+              [ 'fa-people-group',    'Family Gatherings' ],
+              [ 'fa-place-of-worship','Church Services' ],
+              [ 'fa-cake-candles',    'Birthday Parties' ],
+              [ 'fa-cross',           'Christenings &amp; Baptisms' ],
+              [ 'fa-cart-shopping',   'Shopping &amp; Errands' ],
+              [ 'fa-masks-theater',   'Group Events' ],
+              [ 'fa-plane',           'Airport Transfers' ],
           ];
           foreach ( $default_services as $s ) {
-              echo '<div class="service-item fade-up"><div class="service-icon">' . $s[0] . '</div><span>' . $s[1] . '</span></div>';
+              echo '<div class="service-item fade-up"><div class="service-icon"><i class="fa-solid ' . esc_attr( $s[0] ) . '"></i></div><span>' . $s[1] . '</span></div>';
           }
       endif;
       ?>
@@ -150,11 +150,11 @@ $phone_raw  = newt_phone( true );
           <img src="<?php echo esc_url( $img . 'van-interior-diagram.png' ); ?>" alt="Wheelchair van interior layout" />
           <div class="vehicle-thumb-caption"><strong>Interior Layout</strong><span>Designed for comfort and accessibility</span></div>
         </div>
-        <div class="vehicle-features fade-up">
-          <div class="vehicle-feat-item"><span class="vehicle-feat-icon">♿</span><span>Full ADA compliance</span></div>
-          <div class="vehicle-feat-item"><span class="vehicle-feat-icon">🔒</span><span>Secure wheelchair tie-downs</span></div>
-          <div class="vehicle-feat-item"><span class="vehicle-feat-icon">❄️</span><span>Climate controlled</span></div>
-          <div class="vehicle-feat-item"><span class="vehicle-feat-icon">✨</span><span>Always clean &amp; inspected</span></div>
+          <div class="vehicle-features fade-up">
+          <div class="vehicle-feat-item"><span class="vehicle-feat-icon"><i class="fa-solid fa-wheelchair"></i></span><span>Full ADA compliance</span></div>
+          <div class="vehicle-feat-item"><span class="vehicle-feat-icon"><i class="fa-solid fa-lock"></i></span><span>Secure wheelchair tie-downs</span></div>
+          <div class="vehicle-feat-item"><span class="vehicle-feat-icon"><i class="fa-solid fa-snowflake"></i></span><span>Climate controlled</span></div>
+          <div class="vehicle-feat-item"><span class="vehicle-feat-icon"><i class="fa-solid fa-star"></i></span><span>Always clean &amp; inspected</span></div>
         </div>
       </div>
     </div>
@@ -231,7 +231,7 @@ $phone_raw  = newt_phone( true );
     <h2><?php echo esc_html( get_theme_mod( 'newt_cta_headline', 'Ready to Book Your Ride?' ) ); ?></h2>
     <p><?php echo esc_html( get_theme_mod( 'newt_cta_sub', "Call us anytime or fill out our convenient contact form — we're available 24/7 to help you get where you need to go." ) ); ?></p>
     <div class="cta-actions">
-      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-white btn-lg">📞 <?php echo esc_html( $phone ); ?></a>
+      <a href="tel:<?php echo esc_attr( $phone_raw ); ?>" class="btn btn-white btn-lg"><i class="fa-solid fa-phone"></i> <?php echo esc_html( $phone ); ?></a>
       <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-outline btn-lg">Send a Message</a>
     </div>
   </div>
