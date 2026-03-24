@@ -865,6 +865,7 @@ a:hover { color: #67e8f9; }
 }
 .v3-faq-a-inner {
   overflow: hidden;
+  min-height: 0;
 }
 .v3-faq-a-inner > div {
   padding: 0 1.25rem 1.2rem;
